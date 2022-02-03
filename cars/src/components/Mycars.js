@@ -7,23 +7,12 @@ class Mycars extends Component{
         alert('merci de ne pas copier le texte');
     }
 
-    addStyle = (e) => {
-        console.log(e.target);
-
-        if(e.target.classList.contains('styled')){
-            e.target.classList.remove('styled');
-        }else {
-            e.target.classList.add('styled')
-        }
-
-        
-    }
 
     render(){
         console.log(this)
         return (
             <div>
-                <h1 onMouseOver={this.addStyle}>{this.props.title}</h1>
+                <h1>{this.props.title}</h1>
 
             <p onCopy={this.noCopy}> 
             There are many variations of passages of Lorem Ipsum available.

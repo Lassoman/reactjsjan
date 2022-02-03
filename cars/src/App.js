@@ -8,13 +8,19 @@ class App extends Component{
     titre: 'Mon Catalogue Voitures'
   }
 
+  changeTitle = (e) => {
+    this.setState({
+      titre: 'Mon nouveau titre'
+    })
+  }
+
   render() {
 
     return (
       <div className="App">
-        <Mycars title={this.state.titre} />  
+          <Mycars title={this.state.titre} />  
 
-        <button>Changer le nom en dur</button>      
+          <button onClick={this.changeTitle}>Changer le nom en dur</button>      
       </div>
     );
   }
