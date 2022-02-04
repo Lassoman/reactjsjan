@@ -7,16 +7,24 @@ class Mycars extends Component{
         alert('merci de ne pas copier le texte');
     }
 
+    addStyle = (e) => {
+        console.log(e.target);
+        e.target.classList.add('styled');
+    }
+    removeStyle = (e) => {
+        console.log(e.target);
+        e.target.classList.remove('styled');
+    }
 
     render(){
         console.log(this)
         return (
             <div>
-                <h1>{this.props.title}</h1>
+                <h1 onMouseOver={this.addStyle} onMouseLeave={this.removeStyle}>{this.props.title}</h1>
 
-            <p onCopy={this.noCopy}> 
-            There are many variations of passages of Lorem Ipsum available.
-            </p>
+                <p onCopy={this.noCopy}> 
+                There are many variations of passages of Lorem Ipsum available.
+                </p>
 
                 <Car color="red">Ford</Car>
                 <Car>Mercedes</Car>
